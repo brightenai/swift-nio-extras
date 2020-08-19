@@ -18,10 +18,10 @@ import PackageDescription
 var targets: [PackageDescription.Target] = [
     .target(name: "NIOExtras", dependencies: ["NIO"]),
     .target(name: "NIOHTTPCompression", dependencies: ["NIO", "NIOHTTP1", "CNIOExtrasZlib"]),
-    .target(name: "HTTPServerWithQuiescingDemo", dependencies: ["NIOExtras", "NIOHTTP1"]),
-    .target(name: "NIOWritePCAPDemo", dependencies: ["NIO", "NIOExtras", "NIOHTTP1"]),
-    .target(name: "NIOWritePartialPCAPDemo", dependencies: ["NIO", "NIOExtras", "NIOHTTP1"]),
-    .target(name: "NIOExtrasPerformanceTester", dependencies: ["NIO", "NIOExtras", "NIOHTTP1"]),
+//    .target(name: "HTTPServerWithQuiescingDemo", dependencies: ["NIOExtras", "NIOHTTP1"]),
+//    .target(name: "NIOWritePCAPDemo", dependencies: ["NIO", "NIOExtras", "NIOHTTP1"]),
+//    .target(name: "NIOWritePartialPCAPDemo", dependencies: ["NIO", "NIOExtras", "NIOHTTP1"]),
+//    .target(name: "NIOExtrasPerformanceTester", dependencies: ["NIO", "NIOExtras", "NIOHTTP1"]),
     .target(name: "CNIOExtrasZlib",
             dependencies: [],
             linkerSettings: [
@@ -34,12 +34,12 @@ var targets: [PackageDescription.Target] = [
 let package = Package(
     name: "swift-nio-extras",
     products: [
-        .executable(name: "HTTPServerWithQuiescingDemo", targets: ["HTTPServerWithQuiescingDemo"]),
-        .executable(name: "NIOWritePCAPDemo", targets: ["NIOWritePCAPDemo"]),
-        .executable(name: "NIOWritePartialPCAPDemo", targets: ["NIOWritePartialPCAPDemo"]),
-        .executable(name: "NIOExtrasPerformanceTester", targets: ["NIOExtrasPerformanceTester"]),
-        .library(name: "NIOExtras", targets: ["NIOExtras"]),
-        .library(name: "NIOHTTPCompression", targets: ["NIOHTTPCompression"]),
+//        .executable(name: "HTTPServerWithQuiescingDemo", targets: ["HTTPServerWithQuiescingDemo"]),
+//        .executable(name: "NIOWritePCAPDemo", targets: ["NIOWritePCAPDemo"]),
+//        .executable(name: "NIOWritePartialPCAPDemo", targets: ["NIOWritePartialPCAPDemo"]),
+//        .executable(name: "NIOExtrasPerformanceTester", targets: ["NIOExtrasPerformanceTester"]),
+        .library(name: "NIOExtras", type:.static, targets: ["NIOExtras"]),
+        .library(name: "NIOHTTPCompression", type:.static, targets: ["NIOHTTPCompression"]),
     ],
     dependencies: [
         .package(url: "https://github.com/brightenai/swift-nio.git",.branch("master")),// from: "2.9.0"),
